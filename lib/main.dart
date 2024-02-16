@@ -45,6 +45,7 @@ class _StoryPageState extends State<StoryPage> {
 
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children:<Widget> [
                
 
@@ -62,21 +63,41 @@ class _StoryPageState extends State<StoryPage> {
                     
                     ),
                Expanded(
-                child: TextButton(
-                  child: Text('i will do it'),
-                  onPressed: () {
-                    
-                  },
-                  ),
+                child: Padding(
+                  padding: EdgeInsets.all(15),
+                  child: TextButton(
+                    style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all<Color>(Colors.green),
+                    ),
+                    child: Text(
+                      'i will do it',
+                      style: TextStyle(color: Colors.white),
+
+                    ),
+                    onPressed: () {
+                      
+                    },
+                    ),
+                ),
                 ),
                 
                  Expanded(
-                child: TextButton(
-                  child: Text('i will never do it'),
-                  onPressed: () {
-                    
-                  },
-                  ),
+                child: Padding(
+                  padding: EdgeInsets.all(10),
+                  child: TextButton(
+                    style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all<Color>(Colors.red)
+                    ),
+                    child: Text(
+                      'i will never do it',
+                      style: TextStyle(color: Colors.white),
+                      
+                      ),
+                    onPressed: () {
+                      
+                    },
+                    ),
+                ),
                 ),
                 
                  
