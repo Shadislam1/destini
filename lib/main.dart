@@ -68,26 +68,35 @@ class _StoryPageState extends State<StoryPage> {
                           
               
                      Expanded(
-                      child: Text(
-                        //finish step 10
-                        //access the get story using object
-                        //storyBrain using as object
-                        
-                        storyBrain.getStory(),
-                     
-                        style: TextStyle(
-                          fontSize: 25.0,
-                        ),
-              
-                        ),
+                      flex: 12,
+                      child: Center(
+                        child: Text(
+                          //finish step 10
+                          //access the get story using object
+                          //storyBrain using as object
+                          
+                          storyBrain.getStory(),
+                                           
+                          style: TextStyle(
+                            fontSize: 25.0,
+                          ),
+                                    
+                          ),
+                      ),
                       
                       ),
 
 
+
+
+
                  Expanded(
+                  flex: 3,
+                  child:Visibility(
+                    visible: storyBrain.buttonShouldBeVisble(),
                   child: Padding(
                     padding: EdgeInsets.all(15),
-                    child: TextButton(
+                  child: TextButton(
                       style: ButtonStyle(
                         backgroundColor: MaterialStateProperty.all<Color>(Colors.green),
                       ),
@@ -96,27 +105,32 @@ class _StoryPageState extends State<StoryPage> {
                         //use the story brain to get choice num1;
                         //getChoice class acces in storybrain.dart
                         storyBrain.getChoice1(),
-                        style: TextStyle(color: Colors.white),
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 20,
+                          ),
               
                       ),
                       onPressed: () {
                         //18 step
                         // call the nextStory()method from storyBrain and pass the number 1 as choice made by users
                         setState(() {
-                           storyBrain.nextStory();
+                           storyBrain.nextStory(1);
                         });
                         //storyBrain.nextStory();
                       },
                       ),
                   ),
                   ),
+                  ),
                   
                    Expanded(
+                    flex: 3,
                   child: Padding(
                     padding: EdgeInsets.all(10),
                     child: TextButton(
                       style: ButtonStyle(
-                        backgroundColor: MaterialStateProperty.all<Color>(Colors.red)
+                        backgroundColor: MaterialStateProperty.all<Color>(Colors.blue)
                       ),
                       child: Text(
                         
@@ -124,14 +138,17 @@ class _StoryPageState extends State<StoryPage> {
                         //use the story brain to get choice num1;
                         //getChoice class acces in storybrain.dart;
                          storyBrain.getChoice2(),
-                        style: TextStyle(color: Colors.white),
+                        style: TextStyle(
+                          color: Colors.white,
+                        fontSize: 20,
+                        ),
                         
                         ),
                       onPressed: () {
                         //Choice 2 made by user.
                         //step 19 call nextStory() method from and pass the number 2 as choice made user 2.
                         setState(() {
-                          storyBrain.nextStory();
+                          storyBrain.nextStory(2);
                         });
                       },
                       ),
